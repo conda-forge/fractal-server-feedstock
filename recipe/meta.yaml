@@ -26,10 +26,10 @@ requirements:
     - python >={{ python_min }},<4.0.0
     - packaging >=23.2.0,<24.0.0
     - python-dotenv >=1.0.0,<1.1.0
-    - fastapi >= 0.115.0,<0.116.0
+    - fastapi >=0.115.0,<0.116.0
     - sqlmodel ==0.0.21
     - sqlalchemy >=2.0.23,<2.1
-    - greenlet!=0.4.17
+    - greenlet !=0.4.17
     - fastapi-users >=14,<15
     - httpx-oauth >=0.13
     - alembic >=1.13.1,<2.0.0
