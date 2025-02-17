@@ -1,6 +1,6 @@
-{% set python_min = '3.9.0' %}
+{% set python_min = "3.9.0" %}
 {% set name = "fractal-server" %}
-{% set version = "1.4.6" %}
+{% set version = "2.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_server-{{ version }}.tar.gz
-  sha256: fdf52d7098957ebba0f9b3acfc5066c1326baa6a81a7458b2c18d72cf9c1a958
+  sha256: b5712d12c52ba87b3433758b2b45ce42f8608c129f96f25b86a46edbf8ca06d5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - fractalctl = fractal_server.__main__:run
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,18 +23,28 @@ requirements:
     - poetry-core
     - pip
   run:
-    - packaging >=23.2.0,<24.0.0
+    - cloudpickle >=3.1.0,<3.2.0
+    - cryptography >=44.0.1,<44.1.0
+    - fabric >=3.2.2,<3.3.0
+    - gunicorn >=23.0,<24.0
+    - httpx
+    - invoke
+    - paramiko
+    - psycopg >=3.1.0,<4.0.0
+    - pydantic-settings >=2.7.0
+    - uvicorn-worker ==0.3.0
+    - packaging >=24.0.0,<25.0.0
     - bcrypt 4.0.1
     - python >={{ python_min }},<4.0.0
-    - python-dotenv >=0.21.0,<0.22.0
-    - fastapi >=0.109.0,<0.110.0
-    - sqlmodel >=0.0.14,<0.0.15
+    - python-dotenv >=1.0.0,<1.1.0
+    - fastapi >=0.115.0,<0.116.0
+    - sqlmodel ==0.0.22
     - aiosqlite >=0.19.0,<0.20.0
-    - fastapi-users >=12.1.0,<13.0.0
-    - alembic >=1.9.1,<2.0.0
-    - uvicorn >=0.27.0,<0.28.0
+    - fastapi-users >=14,<15
+    - alembic >=1.13.1,<2.0.0
+    - uvicorn >=0.29.0,<0.35.0
     - sqlalchemy >=2.0.23,<2.1
-    - pydantic >=1.10.8,<2
+    - pydantic >=2.10.0,<2.11.0
   run_constrained:
     - clusterfutures >=0.5.0,<0.6.0
     - cloudpickle >=2.2.1,<2.3.0
