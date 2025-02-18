@@ -7,7 +7,7 @@ conda_forge_output_validation: true
 
 bot:
   # can the bot automerge PRs it makes on this feedstock
-  automerge: false
+  automerge: true
 
   # The bot.inspection key in the conda-forge.yml can have one of six possible values:
   # inspection: hint  # generate hints using source code (backwards compatible)
