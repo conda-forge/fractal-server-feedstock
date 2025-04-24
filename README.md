@@ -7,7 +7,7 @@ Home: https://github.com/fractal-analytics-platform/fractal-server
 
 Package license: BSD-3-Clause
 
-Summary: Server component of the Fractal analytics platform
+Summary: Backend component of the Fractal analytics platform
 
 Current build status
 ====================
