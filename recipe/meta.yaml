@@ -1,6 +1,6 @@
-{% set python_min = "3.10.0" %}
+{% set python_min = "3.11.0" %}
 {% set name = "fractal-server" %}
-{% set version = "2.14.5" %}
+{% set version = "2.14.6" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_server-{{ version }}.tar.gz
-  sha256: a4cb5ff15a575e9ceffdfd144b0b7efda9da34ff08d91e79dc5ff0fb5cc0d2ed
+  sha256: 4198054cc832ef9c4c53f71c5cd7061f7fb3af379f4814ef4908be603a8cb4b8
 
 build:
   noarch: python
@@ -38,7 +38,6 @@ requirements:
     - pydantic >=2.11.0,<2.12.0
     - pydantic-settings >=2.7.0
     - packaging >=24.0.0,<25.0.0
-    - cloudpickle >=3.1.0,<3.2.0
     - fabric >=3.2.2,<3.3.0
     - gunicorn >=23.0,<24.0
     - psycopg >=3.1.0,<4.0.0
