@@ -1,6 +1,6 @@
 {% set python_min = "3.11.0" %}
 {% set name = "fractal-server" %}
-{% set version = "2.15.0" %}
+{% set version = "2.15.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_server-{{ version }}.tar.gz
-  sha256: 5fd0dbec773e135f4e3516e6591acdf0e3fbedec434d2087f34991d41557a1bb
+  sha256: ff2cd24c9fdf848e662ca77afe1e0d00e91a7145bdafd88a7628be550b41bb71
 
 build:
   noarch: python
