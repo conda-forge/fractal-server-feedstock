@@ -1,6 +1,6 @@
 {% set python_min = "3.11.0" %}
 {% set name = "fractal-server" %}
-{% set version = "2.15.6" %}
+{% set version = "2.15.7" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_server-{{ version }}.tar.gz
-  sha256: 928b4152add09e77860302789ed429856524daa94acaf6c016625da8468fe296
+  sha256: 153a34f851094de43406fd24adc9baa2a36e86739c6e86c51f554d4c340204a9
 
 build:
   noarch: python
@@ -29,7 +29,7 @@ requirements:
     - paramiko
     - python >={{ python_min }},<4.0.0
     - python-dotenv >=1.1.0,<1.2.0
-    - fastapi >=0.115.0,<0.116.0
+    - fastapi >=0.116.0,<0.117.0
     - sqlmodel ==0.0.24
     - sqlalchemy >=2.0.23,<2.1
     - fastapi-users >=14,<15
