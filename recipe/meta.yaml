@@ -29,7 +29,6 @@ requirements:
     - invoke
     - paramiko
     - python >={{ python_min }},<4.0.0
-    - python-dotenv >=1.1.0,<1.2.0
     - fastapi >=0.120.0,<0.121.0
     - sqlmodel ==0.0.27
     - sqlalchemy >=2.0.23,<2.1
