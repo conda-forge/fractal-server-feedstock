@@ -1,6 +1,6 @@
 {% set python_min = "3.11.0" %}
 {% set name = "fractal-server" %}
-{% set version = "2.17.2" %}
+{% set version = "2.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_server-{{ version }}.tar.gz
-  sha256: 5b2dd3a1c6dade6b1bb1ec0fe786b0d40730cd8f8a14fd5f2994a587b5a8077d
+  sha256: 9c5110aace890684137374b5fc5beb7aa923b103ea6f39997b09dbd00922ecfb
 
 build:
   noarch: python
@@ -23,6 +23,8 @@ requirements:
     - poetry-core
     - pip
   run:
+    - starlette
+    - tomli_w >=1.2.0,<1.3.0
     - httpx-oauth
     - tomli-w >=1.2.0,<1.3.0
     - httpx
