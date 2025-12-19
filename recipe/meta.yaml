@@ -1,6 +1,6 @@
 {% set python_min = "3.11.0" %}
 {% set name = "fractal-server" %}
-{% set version = "2.17.2" %}
+{% set version = "2.18.4" %}
 
 package:
   name: {{ name|lower }}
@@ -8,27 +8,23 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_server-{{ version }}.tar.gz
-  sha256: 5b2dd3a1c6dade6b1bb1ec0fe786b0d40730cd8f8a14fd5f2994a587b5a8077d
+  sha256: 20556364196e4c8bce42c5a2b05b16b19f67e28689d3f2b664ca7d30f04481e3
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - fractalctl = fractal_server.__main__:run
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core
+    - uv-build >=0.9.18,<0.10.0
     - pip
   run:
-    - httpx-oauth
-    - tomli-w >=1.2.0,<1.3.0
-    - httpx
-    - invoke
-    - paramiko
-    - python >={{ python_min }},<4.0.0
+    - tomli-w <1.3.0,>=1.2.0
+    - python >={{ python_min }},<3.15
     - fastapi >=0.120.0,<0.121.0
     - sqlmodel ==0.0.27
     - sqlalchemy >=2.0.23,<2.1
@@ -42,7 +38,6 @@ requirements:
     - fabric >=3.2.2,<3.3.0
     - gunicorn >=23.0,<24.0
     - psycopg >=3.1.0,<4.0.0
-    - cryptography >=46.0.0,<47.0.0
 
 test:
   imports:
