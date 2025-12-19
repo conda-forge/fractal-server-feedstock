@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - uv-build
+    - uv-build >=0.9.18,<0.10.0
     - pip
   run:
     - tomli-w <1.3.0,>=1.2.0
