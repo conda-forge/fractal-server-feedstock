@@ -1,6 +1,6 @@
 {% set python_min = "3.11.0" %}
 {% set name = "fractal-server" %}
-{% set version = "2.18.4" %}
+{% set version = "2.18.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_server-{{ version }}.tar.gz
-  sha256: 20556364196e4c8bce42c5a2b05b16b19f67e28689d3f2b664ca7d30f04481e3
+  sha256: bef194fb84799e4b001119c43812dafba792afa7738d07f398cc45426a6b01ee
 
 build:
   entry_points:
@@ -23,17 +23,22 @@ requirements:
     - uv-build >=0.9.18,<0.10.0
     - pip
   run:
+    - httpx
+    - httpx-oauth
+    - invoke
+    - paramiko
+    - starlette
     - tomli-w <1.3.0,>=1.2.0
     - python >={{ python_min }},<3.15
-    - fastapi >=0.120.0,<0.121.0
-    - sqlmodel ==0.0.27
+    - fastapi >=0.128.0,<0.129.0
+    - sqlmodel ==0.0.31
     - sqlalchemy >=2.0.23,<2.1
     - fastapi-users >=15,<16
     - alembic >=1.13.1,<2.0.0
-    - uvicorn >=0.38.0,<0.39.0
+    - uvicorn >=0.40.0,<0.41.0
     - uvicorn-worker ==0.4.0
     - pydantic >=2.12.0,<2.13.0
-    - pydantic-settings ==2.11.0
+    - pydantic-settings ==2.12.0
     - packaging >=25.0.0,<26.0.0
     - fabric >=3.2.2,<3.3.0
     - gunicorn >=23.0,<24.0
